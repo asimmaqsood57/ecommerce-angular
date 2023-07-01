@@ -1,0 +1,28 @@
+{
+  "seller": [
+    {
+      "name": "asim",
+      "email": "asimmaqsood57@gmail.com",
+      "password": "asim1234",
+      "id": 1
+    },
+    {
+      "name": "Doris Austin",
+      "email": "xilipicoh@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "id": 2
+    },
+    {
+      "name": "Eleanor Ramos",
+      "email": "jevika@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "id": 3
+    },
+    {
+      "name": "Melanie Holder",
+      "email": "gakisizu@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "id": 4
+    }
+  ]
+}

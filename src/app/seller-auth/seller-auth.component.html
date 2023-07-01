@@ -1,0 +1,46 @@
+<form
+  #sellerSignup="ngForm"
+  (ngSubmit)="signUp(sellerSignup.value)"
+  class="container py-5"
+>
+  <h1>Seller Sign up Form</h1>
+  <div class="form-group my-3">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      ngModel
+      name="name"
+      placeholder="Name"
+    />
+  </div>
+  <div class="form-group my-4">
+    <label for="exampleInputEmail1">Email address</label>
+    <input
+      type="email"
+      class="form-control"
+      name="email"
+      ngModel
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      placeholder="Enter email"
+    />
+    <small id="emailHelp" class="form-text text-muted"
+      >We'll never share your email with anyone else.</small
+    >
+  </div>
+  <div class="form-group my-3">
+    <label for="exampleInputPassword1">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      name="password"
+      ngModel
+      id="exampleInputPassword1"
+      placeholder="Password"
+    />
+  </div>
+
+  <button type="submit" class="btn btn-primary mt-3">Submit</button>
+</form>
