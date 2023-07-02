@@ -1,14 +1,37 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SignUp } from '../data-type';
+import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SellerService {
-  constructor(private http: HttpClient) {}
+  isSellerLoggedIn = new BehaviorSubject<boolean>(false);
+  constructor(private http: HttpClient, private router: Router) {}
 
   userSignup(data: SignUp) {
-    return this.http.post('http://localhost:3000/seller', data);
+    this.http
+      .post('http://localhost:3000/seller', data, {
+        observe: 'response',
+      })
+      .subscribe((res) => {
+        if (res) {
+          this.isSellerLoggedIn.next(true);
+          localStorage.setItem('seller', JSON.stringify(res.body));
+          this.router.navigate(['/seller-home']);
+        }
+      });
+
+    return false;
+  }
+
+  reloadSeller() {
+    const seller = localStorage.getItem('seller');
+    if (seller) {
+      this.isSellerLoggedIn.next(true);
+      this.router.navigate(['/seller-home']);
+    }
   }
 }

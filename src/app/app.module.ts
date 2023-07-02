@@ -9,6 +9,7 @@ import { SellerAuthComponent } from './seller-auth/seller-auth.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SellerHomeComponent } from './seller-home/seller-home.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { SellerHomeComponent } from './seller-home/seller-home.component';
     SellerHomeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
